@@ -195,6 +195,15 @@
     color: var(--accent); padding: 3px 10px; border-radius: 999px;
     font-weight: 500;
   }
+  .pub-video {
+    position: relative; width: 100%; padding-bottom: 56.25%;
+    height: 0; overflow: hidden; border-radius: 10px;
+    margin-bottom: 20px; background: #000;
+  }
+  .pub-video iframe {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; border-radius: 10px;
+  }
   .pub-links { display: flex; gap: 12px; flex-wrap: wrap; }
   .pub-link-btn {
     display: inline-flex; align-items: center; gap: 6px;
@@ -703,7 +712,7 @@
     <div class="timeline-item">
       <div class="timeline-meta">
         <div class="timeline-period">Dec 2020 — Mar 2021</div>
-        <div class="timeline-company">axcess.io</div>
+        <div class="timeline-company">Axcess.io</div>
       </div>
       <div>
         <div class="timeline-role">Cloud Engineer</div>
@@ -727,7 +736,7 @@
 <section id="publications">
   <div class="section-label">Research & Writing</div>
   <h2 class="section-title">Publications</h2>
-  <p class="section-sub">Peer-reviewed research in visual analytics and human-computer interaction.</p>
+  <p class="section-sub">Peer-reviewed research in visual analytics and <span style="white-space: nowrap;">human-computer interaction</span>.</p>
 
   <div class="pub-card">
     <div class="pub-status">Under Review</div>
@@ -744,7 +753,8 @@
     </div>
     <div class="pub-links">
       <a href="FluidViews.pdf" target="_blank" class="pub-link-btn">📄 Read Paper</a>
-      <span class="pub-link-btn disabled">🎬 Demo Video — Coming Soon</span>
+      <a href="https://youtu.be/m84n6EvYrk0" target="_blank" class="pub-link-btn">🎬 Watch Demo</a>
+      <span class="pub-link-btn disabled">💻 GitHub — Coming Soon</span>
     </div>
   </div>
 </section>
@@ -760,58 +770,57 @@
 
     <div class="project-card">
       <div class="project-header">
-        <div class="project-emoji">🕸️</div>
+        <div class="project-emoji">🔬</div>
         <div class="project-links">
           <a href="#" class="project-link">GitHub ↗</a>
-          <a href="#" class="project-link">Paper ↗</a>
         </div>
       </div>
-      <div class="project-title">Flowchart Reconstruction from Scientific Papers</div>
-      <p class="project-desc">Multi-agent LLM system that parses scientific PDFs and reconstructs embedded flowcharts into structured graph representations. Core PhD research using LangGraph agents + vision models.</p>
+      <div class="project-title">LLM-Driven Scientific Figure Analysis & Flowchart Reconstruction Pipeline</div>
+      <p class="project-desc">Built a framework processing ~110K arXiv papers and extracting ~1.4M figures with captions via PDFFigures2.0, GROBID, and PaddleOCR. Fine-tuned Llama4-Scout and Qwen2.5-VL with LoRA/PEFT on SPIQA and ChartLlama datasets. Designed a multi-agent orchestration pipeline (Phi-4, Qwen2.5-VL, InternVL) with Llama4-Scout as LLM-as-judge and HITL checkpoints. Built a flowchart reconstruction pipeline using Claude 3.5 Sonnet with structured outputs and RAG to generate Chain-of-Events (CoE) representations — achieving <strong>90% accuracy</strong>.</p>
       <div class="project-tech">
-        <span>LangGraph</span><span>GPT-4V</span><span>PyTorch</span><span>Graph DB</span>
+        <span>Phi-4</span><span>Qwen2.5-VL</span><span>Claude 3.5 Sonnet</span><span>RAG</span><span>LoRA/PEFT</span><span>LLM-as-Judge</span><span>vLLM</span><span>Ray</span>
       </div>
     </div>
 
     <div class="project-card">
       <div class="project-header">
-        <div class="project-emoji">🔍</div>
+        <div class="project-emoji">⚖️</div>
         <div class="project-links">
           <a href="#" class="project-link">GitHub ↗</a>
         </div>
       </div>
-      <div class="project-title">Production RAG Pipeline — Elevance Health</div>
-      <p class="project-desc">Built and deployed a Retrieval-Augmented Generation pipeline for internal knowledge retrieval at Elevance Health. Reduced manual search time by ~40% for clinical operations teams.</p>
+      <div class="project-title">Obesity Prediction: Leveraging LLM and Advanced Machine Learning Techniques</div>
+      <p class="project-desc">Implemented a majority-vote ensemble combining Decision Trees, Random Forest, SVC, KNN, and GPT-4 with K-fold CV and Optuna hyperparameter tuning — boosting accuracy from <strong>94% to 98%</strong> while mitigating overfitting. Applied feature engineering, StandardScaler, and SMOTE class balancing for dataset robustness; evaluated with accuracy, weighted F1-score, recall, and precision.</p>
       <div class="project-tech">
-        <span>LangChain</span><span>FAISS</span><span>AWS</span><span>FastAPI</span><span>Python</span>
+        <span>GPT-4</span><span>Scikit-Learn</span><span>XGBoost</span><span>Optuna</span><span>SMOTE</span><span>Random Forest</span><span>K-fold CV</span>
       </div>
     </div>
 
     <div class="project-card">
       <div class="project-header">
-        <div class="project-emoji">⚡</div>
+        <div class="project-emoji">🌸</div>
         <div class="project-links">
-          <a href="#" class="project-link">GitHub ↗</a>
+          <a href="https://observablehq.com/d/87c3daa243ff5eee" target="_blank" class="project-link">Live Demo ↗</a>
         </div>
       </div>
-      <div class="project-title">LLM Serving & Inference Optimization</div>
-      <p class="project-desc">Optimized LLM inference throughput using vLLM and dynamic batching. Benchmarked latency and token throughput across model sizes, achieving 3x throughput improvement over baseline serving.</p>
+      <div class="project-title">Movies in Bloom: A Floral Glyph Visualization of Film Data</div>
+      <p class="project-desc">A custom D3.js glyph visualization that represents movies as flowers. Each flower encodes three variables simultaneously through visual form: the <strong>number of petals</strong> is scaled by the number of votes, the <strong>overall flower size</strong> reflects the movie rating, and the <strong>petal shape</strong> represents the MPAA rating category (G, PG, PG-13, R). A pleasing, scannable alternative to traditional bar charts for multivariate film data.</p>
       <div class="project-tech">
-        <span>vLLM</span><span>CUDA</span><span>Triton</span><span>PyTorch</span>
+        <span>D3.js</span><span>Observable HQ</span><span>SVG</span><span>Custom Glyphs</span><span>Data Visualization</span>
       </div>
     </div>
 
     <div class="project-card">
       <div class="project-header">
-        <div class="project-emoji">🏥</div>
+        <div class="project-emoji">🗺️</div>
         <div class="project-links">
-          <a href="#" class="project-link">GitHub ↗</a>
+          <a href="https://observablehq.com/d/dc3689c0d68c43fa" target="_blank" class="project-link">Live Demo ↗</a>
         </div>
       </div>
-      <div class="project-title">Claims Fraud Detection — ML Classifier</div>
-      <p class="project-desc">Production ML classifier for insurance claims fraud detection at Elevance Health. Deployed using MLflow + AWS SageMaker. Model achieved 91% AUC on held-out test set.</p>
+      <div class="project-title">GrantsFlow: Visualizing Louisiana's Post-Katrina Road Home Recovery</div>
+      <p class="project-desc">An interactive D3.js dashboard analyzing ProPublica's Road Home dataset — individual-level grants disbursed to Louisiana homeowners after Hurricanes Katrina and Rita. Built a custom <strong>D3 HexGrid map</strong> of Louisiana showing average damage per hex bin with brushing for region selection. Designed two novel custom glyphs: a <strong>Home glyph</strong> where 8 layered triangles encode the repair-cost percentage of total damage (with a blue back-area for rebuild cost), and a <strong>Chimney stacked bar</strong> showing cumulative distribution across the four grant types — Compensation, Additional Compensation, Elevation, and Individual Mitigation Measure.</p>
       <div class="project-tech">
-        <span>XGBoost</span><span>SageMaker</span><span>MLflow</span><span>Pandas</span>
+        <span>D3.js</span><span>D3-HexGrid</span><span>Observable HQ</span><span>Python</span><span>GeoPandas</span><span>Data Visualization</span>
       </div>
     </div>
 
