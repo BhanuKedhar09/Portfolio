@@ -164,6 +164,51 @@
     border: 1px solid rgba(255,255,255,0.6);
   }
 
+  /* PUBLICATIONS */
+  .pub-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 32px; max-width: 860px;
+    border-left: 4px solid var(--accent);
+  }
+  .pub-status {
+    display: inline-block; font-size: 0.7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: #d97706; background: #fef3c7;
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .pub-title {
+    font-family: 'DM Serif Display', serif; font-size: 1.25rem;
+    color: var(--text-primary); margin-bottom: 6px; line-height: 1.4;
+  }
+  .pub-authors {
+    font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;
+  }
+  .pub-abstract {
+    font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .pub-tags {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;
+  }
+  .pub-tags span {
+    font-size: 0.75rem; background: var(--accent-light);
+    color: var(--accent); padding: 3px 10px; border-radius: 999px;
+    font-weight: 500;
+  }
+  .pub-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .pub-link-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 18px; border-radius: 8px; font-size: 0.85rem;
+    font-weight: 500; text-decoration: none;
+    background: var(--accent); color: #fff;
+    transition: opacity 0.2s;
+  }
+  .pub-link-btn:hover { opacity: 0.85; }
+  .pub-link-btn.disabled {
+    background: var(--border); color: var(--text-muted); cursor: default;
+  }
+  .pub-link-btn.disabled:hover { opacity: 1; }
+
   /* SOCIAL ICONS */
   .social-links {
     display: flex; gap: 14px; margin-top: 20px; align-items: center;
@@ -439,6 +484,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#publications">Publications</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -591,48 +637,115 @@
 <section id="experience">
   <div class="section-label">Where I've worked</div>
   <h2 class="section-title">Experience</h2>
-  <p class="section-sub">Industry ML work combined with academic research.</p>
+  <p class="section-sub">From production ML systems to HPC research infrastructure — one role, many hats.</p>
   <div class="timeline">
 
     <div class="timeline-item">
       <div class="timeline-meta">
-        <div class="timeline-period">2023 — 2024</div>
-        <div class="timeline-company">Elevance Health</div>
+        <div class="timeline-period">Jan 2025 — Dec 2025</div>
+        <div class="timeline-company">Northern Illinois University</div>
       </div>
       <div>
-        <div class="timeline-role">Machine Learning Engineer</div>
-        <span class="timeline-type">Full-time</span>
-        <p class="timeline-desc">Built production RAG pipelines and ML classifiers serving clinical and operations teams. Worked on LLM serving infrastructure, MLOps tooling, and real-time data pipelines. Collaborated cross-functionally with data engineers and product teams.</p>
+        <div class="timeline-role">Graduate Researcher</div>
+        <p class="timeline-desc">Working with Dr.&nbsp;Alhoori on LLM-driven scientific figure analysis. Reconstructed scientific flowcharts with 90% accuracy across 1.4M figures using a Chain-of-Events, RAG and multi-agent pipeline (Phi-4, Qwen2.5-VL, InternVL, Llama4-Scout-as-judge). Deployed and maintained multi-node Ray + vLLM inference on NIU Metis HPC across 32 A100 GPUs. Also serving as Teaching Assistant for CSCI 502 (Java) and CSCI 503 (Python), mentoring 40+ graduate and undergraduate students.</p>
         <div class="timeline-tags">
-          <span class="timeline-tag">LangChain</span>
-          <span class="timeline-tag">AWS</span>
-          <span class="timeline-tag">Python</span>
-          <span class="timeline-tag">MLflow</span>
-          <span class="timeline-tag">XGBoost</span>
-          <span class="timeline-tag">FastAPI</span>
+          <span class="timeline-tag">LangGraph</span>
+          <span class="timeline-tag">RAG</span>
+          <span class="timeline-tag">vLLM</span>
+          <span class="timeline-tag">Ray</span>
+          <span class="timeline-tag">Phi-4</span>
+          <span class="timeline-tag">Qwen2.5-VL</span>
+          <span class="timeline-tag">LLM-as-Judge</span>
+          <span class="timeline-tag">HPC</span>
+          <span class="timeline-tag">A100 GPUs</span>
         </div>
       </div>
     </div>
 
     <div class="timeline-item">
       <div class="timeline-meta">
-        <div class="timeline-period">2022 — Present</div>
-        <div class="timeline-company">Northern Illinois University</div>
+        <div class="timeline-period">May 2024 — Dec 2024</div>
+        <div class="timeline-company">Elevance Health</div>
       </div>
       <div>
-        <div class="timeline-role">PhD Researcher — Computer Science</div>
-        <span class="timeline-type">Research</span>
-        <p class="timeline-desc">Research focus on multi-agent LLM systems for scientific document understanding. Specifically working on automated flowchart reconstruction from scientific PDFs using vision-language models and LangGraph. Published in progress.</p>
+        <div class="timeline-role">Data Analytics</div>
+        <p class="timeline-desc">Shipped a classification system auditing 144K+ reports at 95% accuracy, cutting manual review by 60% and eliminating SLA penalty exposure. Lifted minority-class recall by 20% via failure-mode feature engineering, k-fold CV, and hyperparameter tuning. Built D3.js dashboards tracking pipeline-stage progress — adopted as the default daily artifact for the ops team. Deployed on SageMaker and Kubeflow.</p>
         <div class="timeline-tags">
-          <span class="timeline-tag">LangGraph</span>
-          <span class="timeline-tag">PyTorch</span>
-          <span class="timeline-tag">NLP</span>
-          <span class="timeline-tag">Computer Vision</span>
-          <span class="timeline-tag">Multi-agent</span>
+          <span class="timeline-tag">Scikit-Learn</span>
+          <span class="timeline-tag">SageMaker</span>
+          <span class="timeline-tag">Kubeflow</span>
+          <span class="timeline-tag">XGBoost</span>
+          <span class="timeline-tag">D3.js</span>
+          <span class="timeline-tag">REST API</span>
+          <span class="timeline-tag">Python</span>
         </div>
       </div>
     </div>
 
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-period">Mar 2021 — Aug 2021</div>
+        <div class="timeline-company">Alation</div>
+      </div>
+      <div>
+        <div class="timeline-role">DevOps Engineer</div>
+        <p class="timeline-desc">Reduced instance costs by 30% by migrating from MacStadium Anka to AWS Mac VMs. Built Jenkins CI/CD pipelines with auto-scaling and load-balancing for Docker-based environments, optimizing resource utilization at peak demand.</p>
+        <div class="timeline-tags">
+          <span class="timeline-tag">AWS</span>
+          <span class="timeline-tag">Jenkins</span>
+          <span class="timeline-tag">Docker</span>
+          <span class="timeline-tag">CI/CD</span>
+          <span class="timeline-tag">Auto-scaling</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <div class="timeline-period">Dec 2020 — Mar 2021</div>
+        <div class="timeline-company">axcess.io</div>
+      </div>
+      <div>
+        <div class="timeline-role">Cloud Engineer</div>
+        <p class="timeline-desc">Maintained and ensured uptime of multiple web applications using robust cloud infrastructure and monitoring techniques. Addressed DDoS attacks to safeguard websites against potential threats, and worked with cross-functional teams for continuous deployment.</p>
+        <div class="timeline-tags">
+          <span class="timeline-tag">Cloud Infrastructure</span>
+          <span class="timeline-tag">Web Applications</span>
+          <span class="timeline-tag">DDoS Mitigation</span>
+          <span class="timeline-tag">CI/CD</span>
+          <span class="timeline-tag">Monitoring</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-label">Research & Writing</div>
+  <h2 class="section-title">Publications</h2>
+  <p class="section-sub">Peer-reviewed research in visual analytics and human-computer interaction.</p>
+
+  <div class="pub-card">
+    <div class="pub-status">Under Review</div>
+    <h3 class="pub-title">FluidViews: Adaptive Drag-and-Drop Token Filters for Heterogeneous Multi-View Visual Analytics</h3>
+    <p class="pub-authors">Bhanu Sunku · Northern Illinois University</p>
+    <p class="pub-abstract">Interactive visual analytics workflows are often disrupted by rigid filter panels and context switches that break analysts' cognitive flow. FluidViews elevates filters to first-class, manipulable objects through two novel direct-manipulation interactions — <strong>Copy-as-Highlight</strong> for persistent cross-view comparison, and <strong>Drag-as-Filter</strong> to apply context-sensitive filters in place with no menus or modal dialogs required. A user study showed it eliminated cross-view navigation overhead vs. baseline dashboards.</p>
+    <div class="pub-tags">
+      <span>Multi-View Visual Analytics</span>
+      <span>Direct Manipulation</span>
+      <span>Drag-and-Drop</span>
+      <span>HCI</span>
+      <span>D3.js</span>
+      <span>React</span>
+    </div>
+    <div class="pub-links">
+      <a href="FluidViews.pdf" target="_blank" class="pub-link-btn">📄 Read Paper</a>
+      <span class="pub-link-btn disabled">🎬 Demo Video — Coming Soon</span>
+    </div>
   </div>
 </section>
 
